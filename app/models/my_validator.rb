@@ -3,7 +3,7 @@ class MyValidator < ActiveModel::Validator
     binding.pry
     clickbait = ["Won't Believe", "Secret", "Top", "Guess"]
     if post.title && clickbait.none? { |phrase| post.title.include?(phrase) }
-      record.errors[:title] << "Need clickbait"
+      post.errors[:title] << "Need clickbait"
     end
   end
 end
